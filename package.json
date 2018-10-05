@@ -1,0 +1,31 @@
+{
+  "name": "amphora-sitemaps",
+  "version": "1.0.0",
+  "description": "A module for get the all the published articles for the sites for Amphora",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "amphora",
+    "clay",
+    "kiln"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clay/amphora-sitemaps"
+  },
+  "author": "New York Media",
+  "license": "MIT",
+  "dependencies": {
+    "amphora": "^7.1.0",
+    "amphora-fs": "^1.0.2",
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
+    "clay-log": "^1.3.1",
+    "clayutils": "^2.6.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11",
+    "xml-js": "^1.6.8"
+  }
+}
