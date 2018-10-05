@@ -1,7 +1,7 @@
 {
   "name": "amphora-sitemaps",
   "version": "1.0.0",
-  "description": "A module for get the all the published articles for the sites for Amphora",
+  "description": "A module for get the all the published pages for the sites for Amphora",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
