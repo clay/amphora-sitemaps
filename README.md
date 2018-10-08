@@ -1,6 +1,6 @@
 # Amphora Sitemaps
 
-> A Sitemaping module for Amphora that expose endpoints that you can hit in your to get the all the published articles in an XML response.
+> A Sitemaping module for Amphora that exposes endpoints to get the all the published pages in an XML response.
 
 ## Installation & Usage
 
@@ -24,4 +24,4 @@ amphora({
 })
 ```
 
-At startup time the module will create the db schema and table needed to work properly, this will be made using the amphora database adapter.
+At startup time the module will create and expose endpoints that you can hit in your browser to get the all the published pages in an XML response for that site. `eg. yoursite.com/sitemap`
