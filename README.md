@@ -24,4 +24,4 @@ amphora({
 })
 ```
 
-At startup time the module will create and expose endpoints that you can hit in your browser to get the all the published pages in an XML response for that site. `eg. yoursite.com/sitemap`
+At startup time the module will create and expose endpoints that you can hit in your browser to get the all the published pages in an XML response for that site. `eg. yoursite.com/_sitemap`
