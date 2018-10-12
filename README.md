@@ -10,18 +10,37 @@ First install the module:
 $ npm install -s amphora-sitemaps
 ```
 
-Then pass the module into Amphora as an item for the `plugins` array property.
+Then, require the module and pass all the options you need to start the plugin:
+```javascript
+const amphoraSitemaps = require('amphora-sitemaps'),
+  amphoraSitemapsPlugin = amphoraSitemaps({ _news: { component: 'article' }});
+```
+
+After that, pass the module into Amphora as an item for the `plugins` array property.
 
 ```javascript
 amphora({
   ...
   plugins: [
     ...
-    require('amphora-sitemaps'),
+    amphoraSitemapsPlugin,
     ...
   ],
   ...
 })
 ```
 
-At startup time the module will create and expose endpoints that you can hit in your browser to get the all the published pages in an XML response for that site. `eg. yoursite.com/_sitemap`
+## Endpoints
+At startup time, the module will create the following XML endpoints:
+
+### _sitemaps
+Get the all the published pages.
+
+`eg. yoursite.com/_sitemap`
+
+### _news
+Get pages based on the [Google News Sitemap](https://support.google.com/news/publisher-center/answer/74288?hl=en) guidelines.
+
+You should pass the `component` you want to use to fetch said the pages (See [Installation & Usage](/#installation--usage) for reference).
+
+`eg. yoursite.com/_news`
