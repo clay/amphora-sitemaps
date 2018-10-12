@@ -30,6 +30,20 @@ amphora({
 })
 ```
 
+## Options
+
+The options object is used to initialize some endpoints like `_news`.
+
+The object should have the following format:
+
+```javascript
+var options = {
+  _news: { // Endpoint name
+    component: 'article' // The component used to get the data for the sitemap
+  }
+}
+```
+
 ## Endpoints
 At startup time, the module will create the following XML endpoints:
 
@@ -41,6 +55,6 @@ Get the all the published pages.
 ### _news
 Get pages based on the [Google News Sitemap](https://support.google.com/news/publisher-center/answer/74288?hl=en) guidelines.
 
-You should pass the `component` you want to use to fetch said the pages (See [Installation & Usage](/#installation--usage) for reference).
+In order to meet these guidelines, you must pass a component name with the properties `canonicalUrl` and `date` because those fields are required.
 
 `eg. yoursite.com/_news`
