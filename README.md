@@ -48,12 +48,12 @@ var options = {
 At startup time, the module will create the following XML endpoints:
 
 ### _sitemaps
-Get the all the published pages.
+Gets the all the published pages.
 
 `eg. yoursite.com/_sitemap`
 
 ### _news
-Get pages based on the [Google News Sitemap](https://support.google.com/news/publisher-center/answer/74288?hl=en) guidelines.
+Gets pages based on the [Google News Sitemap](https://support.google.com/news/publisher-center/answer/74288?hl=en) guidelines.
 
 In order to meet these guidelines, you must pass a component name with the properties `canonicalUrl` and `date` because those fields are required.
 
