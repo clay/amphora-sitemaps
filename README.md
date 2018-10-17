@@ -12,8 +12,34 @@ $ npm install -s amphora-sitemaps
 
 Then, require the module and pass all the options you need to start the plugin:
 ```javascript
+/**
+ * Gets the keywords from each content.
+ * 
+ * @param {Object} data
+ * @returns {string}
+ */
+function getKeywords(data) {
+  ...
+}
+
+/**
+ * Filters content by the critiria you choise.
+ * 
+ * @param {Object} data
+ * @returns {boolean}
+ */
+function componentFilter(data) {
+  ...
+}
+
 const amphoraSitemaps = require('amphora-sitemaps'),
-  amphoraSitemapsPlugin = amphoraSitemaps({ _news: { component: 'article' }});
+  amphoraSitemapsPlugin = amphoraSitemaps({ 
+    _news: {
+      components: ['article', 'gallery'],
+      getKeywords,
+      componentFilter
+    }
+  });
 ```
 
 After that, pass the module into Amphora as an item for the `plugins` array property.
@@ -48,7 +74,7 @@ var options = {
 At startup time, the module will create the following XML endpoints:
 
 ### _sitemaps
-Gets the all the published pages.
+Gets all the published pages.
 
 `eg. yoursite.com/_sitemap`
 
