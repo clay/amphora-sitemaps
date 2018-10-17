@@ -16,14 +16,14 @@ Then, require the module and pass all the options you need to start the plugin:
  * Gets the keywords from each content.
  * 
  * @param {Object} data
- * @returns {string}
+ * @returns {Promise}
  */
 function getKeywords(data) {
   ...
 }
 
 /**
- * Filters content by the critiria you choise.
+ * Filters content by the criteria you choose.
  * 
  * @param {Object} data
  * @returns {boolean}
@@ -71,14 +71,17 @@ var options = {
 ```
 
 ## Endpoints
+
 At startup time, the module will create the following XML endpoints:
 
 ### _sitemaps
+
 Gets all the published pages.
 
 `eg. yoursite.com/_sitemap`
 
 ### _news
+
 Gets pages based on the [Google News Sitemap](https://support.google.com/news/publisher-center/answer/74288?hl=en) guidelines.
 
 In order to meet these guidelines, you must pass a component name with the properties `canonicalUrl` and `date` because those fields are required.
