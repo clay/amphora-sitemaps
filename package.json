@@ -20,7 +20,7 @@
   "author": "New York Media",
   "license": "MIT",
   "dependencies": {
-    "amphora": "^7.1.0",
+    "amphora": "clay/amphora#handlebars_peer_dependency",
     "amphora-fs": "^1.0.2",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
