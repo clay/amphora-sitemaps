@@ -1,6 +1,6 @@
 {
   "name": "amphora-sitemaps",
-  "version": "0.0.2",
+  "version": "1.0.0-0",
   "description": "A module for get the all the published pages for the sites for Amphora",
   "main": "index.js",
   "scripts": {
