@@ -1,6 +1,6 @@
 {
   "name": "amphora-sitemaps",
-  "version": "1.0.0-0",
+  "version": "0.0.2",
   "description": "A module for get the all the published pages for the sites for Amphora",
   "main": "index.js",
   "scripts": {
@@ -20,14 +20,14 @@
   "author": "New York Media",
   "license": "MIT",
   "dependencies": {
-    "amphora": "^8.0.0-0",
-    "amphora-fs": "^2.0.0-0",
+    "amphora": "^8.0.0",
+    "amphora-fs": "^2.0.0",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
     "clay-log": "^1.3.1",
     "express": "^4.16.3",
     "highland": "^2.13.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "xml": "^1.0.1"
   },
   "devDependencies": {
