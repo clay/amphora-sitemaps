@@ -10,18 +10,80 @@ First install the module:
 $ npm install -s amphora-sitemaps
 ```
 
-Then pass the module into Amphora as an item for the `plugins` array property.
+Then, require the module and pass all the options you need to start the plugin:
+```javascript
+/**
+ * Gets the keywords from each content.
+ * 
+ * @param {Object} data
+ * @returns {Promise}
+ */
+function getKeywords(data) {
+  ...
+}
+
+/**
+ * Filters content by the criteria you choose.
+ * 
+ * @param {Object} data
+ * @returns {boolean}
+ */
+function componentFilter(data) {
+  ...
+}
+
+const amphoraSitemaps = require('amphora-sitemaps'),
+  amphoraSitemapsPlugin = amphoraSitemaps({ 
+    _news: {
+      components: ['article', 'gallery'],
+      getKeywords,
+      componentFilter
+    }
+  });
+```
+
+After that, pass the module into Amphora as an item for the `plugins` array property.
 
 ```javascript
 amphora({
   ...
   plugins: [
     ...
-    require('amphora-sitemaps'),
+    amphoraSitemapsPlugin,
     ...
   ],
   ...
 })
 ```
 
-At startup time the module will create and expose endpoints that you can hit in your browser to get the all the published pages in an XML response for that site. `eg. yoursite.com/_sitemap`
+## Options
+
+The options object is used to initialize some endpoints like `_news`.
+
+The object should have the following format:
+
+```javascript
+var options = {
+  _news: { // Endpoint name
+    component: 'article' // The component used to get the data for the sitemap
+  }
+}
+```
+
+## Endpoints
+
+At startup time, the module will create the following XML endpoints:
+
+### _sitemaps
+
+Gets all the published pages.
+
+`eg. yoursite.com/_sitemap`
+
+### _news
+
+Gets pages based on the [Google News Sitemap](https://support.google.com/news/publisher-center/answer/74288?hl=en) guidelines.
+
+In order to meet these guidelines, you must pass a component name with the properties `canonicalUrl` and `date` because those fields are required.
+
+`eg. yoursite.com/_news`
